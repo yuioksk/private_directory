@@ -20,3 +20,4 @@ echo""
 echo "spath to d path"
 sudo cp -av /home/e1027/saranya/bkp.zip /opt/backup
 
+made changes
