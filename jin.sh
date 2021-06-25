@@ -23,5 +23,6 @@ else
 	echo 'Problem copuing file'
 fi
 
-echo "this change is done in  merge test folder"
 
+echo "this change is done in  merge test folder"
+echo "this change is done in script folder"
