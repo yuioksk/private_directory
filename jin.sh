@@ -23,3 +23,8 @@ else
 	echo 'Problem copuing file'
 fi
 
+make changes
+make changes
+
+echo "this change is done in script folder"
+
