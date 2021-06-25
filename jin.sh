@@ -23,3 +23,5 @@ else
 	echo 'Problem copuing file'
 fi
 
+echo "this change is done in  merge test folder"
+
