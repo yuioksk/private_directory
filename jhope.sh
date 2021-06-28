@@ -43,3 +43,4 @@ else
 	echo 'Problem copuing file'
 fi
 
+make changes
