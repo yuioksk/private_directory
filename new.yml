@@ -1,0 +1,41 @@
+ - hosts: 127.0.0.1
+   vars_files:
+           - /home/karan/ha.yml
+   tasks:
+           - name: Update and upgrade apt packages
+             become_method: sudo
+             command: apt update
+
+           - name: installtion of haproxy
+             become_method: sudo
+             apt:
+              package: haproxy
+                
+           - name: Copy the default config page to server
+             template:
+               src: "/home/karan/haproxy.cfg.j2"
+               dest: "/etc/haproxy/haproxy.cfg"
+
+           - name: line insert
+             become_method: sudo
+             lineinfile:
+              path: /etc/hosts
+              line: '127.0.0.1  {{ site1 }}'
+              insertbefore: BOF
+
+           - name: vaildate haproxy config
+             become_method: sudo
+             command: /etc/init.d/haproxy status
+
+           - name: restatrt the haproxy service
+             service:
+              name: haproxy
+              state: reloaded
+
+           - name: restart nginx
+             service:
+                     name: nginx
+                     state: reloaded
+
+
+                     #changes
